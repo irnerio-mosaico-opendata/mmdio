@@ -1,0 +1,100 @@
+#################Use Case 1##################################
+####### 1. Retrieve the titles of all manuscript collections cited in the book `Authenticum'.
+
+SELECT ?manuscriptCollection ?collectionTitle
+WHERE {
+  ?book a fabio:Book ;
+        dcterms:title "Authenticum" .
+  ?book cito:cites ?manuscriptCollection .
+  ?manuscriptCollection a mmdio:ManuscriptCollection ;
+                   dcterms:title ?collectionTitle .
+}
+
+### 2. Retrieve bibliographic references that cite books, including the titles and authors of the cited books.
+
+SELECT  ?references ?bookTitle  ?authorName
+WHERE { 
+  ?bibliographicReference a biro:BibliographicReference ;
+                            cito:cites ?book;
+                          c4o:hasContent ?references .
+    ?book a fabio:Book ;
+        dcterms:title ?bookTitle ;
+        dcterms:creator ?person .
+  ?person a foaf:Person ;
+          foaf:name ?authorName .
+
+}
+
+
+### 3. Retrieve all manuscripts from the `El Escorial, S.I.9' collection along with the bibliographic references and the book that cite this collection.
+
+
+SELECT  ?manuscript ?manuscriptTitle ?references ?bookTitle 
+WHERE {
+  ?book a fabio:Book ;
+        dcterms:title ?bookTitle ;
+        cito:cites ?collection .  
+?collection a mmdio:ManuscriptCollection ;
+     dcterms:title "El Escorial, S.I.9" ;
+              frbr:part ?manuscript .
+  ?manuscript a memo:Manuscript ;
+               dcterms:title ?manuscriptTitle .
+  ?bibliograhicList a biro:BibliographicList ;
+        cito:cites ?collection .
+  ?bibliograhicList biro:references ?bibliographicReference .
+  ?bibliographicReference a biro:BibliographicReference ;
+                          c4o:hasContent ?references .
+
+}
+
+
+### 4. Retrieve all the folios that contain a gloss including gloss title, identifier, type and placement in the text.
+
+
+SELECT ?folio ?glossTitle ?glossIdentifier ?glossType ?glossPlacement
+WHERE {
+  
+  ?gloss a memo:Gloss ;
+         dcterms:title ?glossTitle;
+         dcterms:identifier ?glossIdentifier;
+         mmdio:hasGlossType ?glossType;
+         mmdio:hasGlossPlacement ?glossPlacement;
+         frbr:embodiment ?folio .
+  ?folio a memo:Folio .
+  
+  FILTER(?glossType IN (mmdio:ordinary, mmdio:extravagant))
+ FILTER(?glossPlacement IN (mmdio:interlinear, mmdio:marginal))
+}
+
+
+
+### 5. Retrieve the biographies of all authors from their respective sections in books.
+
+
+SELECT ?book ?sectionTitle ?biographyContent ?authorName
+WHERE {
+    ?book a fabio:Book ;
+          mmdio:hasSection ?section .
+    ?section a doco:Section ;
+             dcterms:title ?sectionTitle ;
+             mmdio:hasBiography ?biography .
+    ?biography a deo:Biography ;
+               core:description ?biographyContent ;
+               mmdio:isAbout ?author .
+    ?author a foaf:Person ;
+            foaf:name ?authorName .
+}
+
+
+### 6. Retrieve the titles and time intervals (start and end dates) of `Paris, Mazar. 45’ manuscript collection.
+
+SELECT ?startDate ?endDate 
+
+{
+  ?manuscriptCollection a mmdio:ManuscriptCollection ;
+                         dcterms:title "Paris, Mazar. 452" ;
+                        tvc:atTime ?timeInterval .
+  ?timeInterval a ti:TimeInterval ;
+                ti:hasIntervalStartDate ?startDate ;
+                ti:hasIntervalEndDate ?endDate .
+}

@@ -1,0 +1,18 @@
+#################Use Case 3##################################
+
+###  Which books in the 'mosaico' digital collection cite manuscripts that are part of the 'irnerio' collection?
+
+  SELECT  ?book  ?bookTitle  ?manuscript ?manuscriptTitle
+WHERE {
+  ?book a fabio:Book ;
+        frbr:partOf  ?bookCollection;
+        dcterms:title ?bookTitle;
+        cito:cites ?manuscript .
+   ?bookCollection a mmdio:DigitalResourceCollection;
+           dcterms:title "mosaico" .
+    ?manuscript a memo:Manuscript ;
+              dcterms:title ?manuscriptTitle ;
+             frbr:partOf   ?manuscriptCollection.
+   ?manuscriptCollection a mmdio:DigitalResourceCollection;
+           dcterms:title "irnerio" .
+}

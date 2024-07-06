@@ -1,0 +1,84 @@
+#### 1. Retrieve the critical edition and critical edition volume that cite the `Moralia sive Expositio in Iob' manuscript.
+
+SELECT ?CriticalEdition ?editionTitle ?CriticalEditionVolume ?volumeIdentifier
+WHERE {
+  ?CriticalEditionVolume a memo:CriticalEditionVolume ;
+                         dcterms:identifier ?volumeIdentifier ;
+                         cito:cites ?manuscript .
+  ?manuscript a memo:Manuscript ;
+              dcterms:title "De inventione librorum Moralium S. Gregorii" .
+  ?CriticalEdition a fabio:CriticalEdition ;
+                   dcterms:title ?editionTitle ;
+                   frbr:realization ?CriticalEditionVolume.
+}
+
+
+#### 2. What are the textual roles and content of the textual metadata associated with the manuscript titled "Tres libri cum glossa Accursii"
+
+SELECT ?TextualRole ?hasTextualContent 
+WHERE {
+  ?Manuscript a memo:Manuscript ;
+              dcterms:title "Tres libri cum glossa Accursii" ;
+              memo:hasTextualMetadata ?TextualMetadata .
+  ?TextualMetadata a mmdio:TextualMetadata ;
+                   memo:withTextualRole ?TextualRole ;
+                   mmdio:hasTextualContent ?hasTextualContent .
+  
+}
+
+
+
+#### 3. List all folios within the Codex-006 codex, including the identifiers for each recto and verso side.
+
+SELECT ?Folio ?RectoIdentifier ?VersoIdentifier
+WHERE {
+  ?codex a memo:Codex ;
+         dcterms:identifier "http://irnerio.cirsfid.unibo.it/codex/006/" ;
+         frbr:part ?Folio .
+  ?Folio a memo:Folio .
+    OPTIONAL {
+    ?Folio frbr:part ?recto .
+    ?recto a memo:Recto ;
+           dcterms:identifier ?RectoIdentifier .
+  }
+  
+  OPTIONAL {
+    ?Folio frbr:part ?verso .
+    ?verso a memo:Verso ;
+           dcterms:identifier ?VersoIdentifier .
+  }
+
+}
+
+
+### 4.  Retrieve the dimensions of the binding (length and width) and the size measurement unit for the codex 'http://irnerio.cirsfid.unibo.it/codex/006/'.
+
+SELECT ?binding ?length ?width ?unit 
+WHERE {
+
+  ?codex a memo:Codex ;
+         dcterms:identifier "http://irnerio.cirsfid.unibo.it/codex/006/" ;
+         frbr:part ?binding .
+  ?binding a memo:Binding ;
+           dcterms:extent ?sizeMeasurement .
+  ?sizeMeasurement a memo:SizeMeasurement ;
+                   memo:hasLength ?length ;
+                   memo:hasWidth ?width ;
+                   memo:hasSizeMeasurementUnit ?unit .
+  FILTER(?unit IN (memo:millimeters, memo:centimeters, memo:decimeters, memo:meters))
+}
+
+
+
+
+### 5. Retrieve the current physical location of `Customs feudorum cum glossa Accursii’ manuscript
+
+SELECT ?currentLocation 
+WHERE {
+  ?manuscript a memo:Manuscript ;
+             dcterms:title "Customs feudorum cum glossa Accursii" ;
+             core:hasLocation ?location .
+    ?location a dcterms:Location ;
+           arco:hasLocationType arco:CurrentPhysicalLocation ;
+             mmdio:hasLocationName ?currentLocation .
+}

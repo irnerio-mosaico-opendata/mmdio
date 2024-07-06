@@ -1,0 +1,257 @@
+################Competency Questions and SPARQL Queries################################
+
+##### 1. What are the names of the collections and their creators for each digital resource collection?
+
+SELECT ?digitalResourceCollection ?title ?creatorName
+WHERE {
+  ?digitalResourceCollection a mmdio:DigitalResourceCollection ;
+                             dcterms:title ?title ;
+                             dcterms:creator ?creator .
+  ?creator a foaf:Organization ;
+           foaf:name ?creatorName .
+}
+
+
+####### 2. Retrieve the titles of all manuscript collections cited in the book `Authenticum'.
+
+SELECT ?manuscriptCollection ?collectionTitle
+WHERE {
+  ?book a fabio:Book ;
+        dcterms:title "Authenticum" .
+  ?book cito:cites ?manuscriptCollection .
+  ?manuscriptCollection a mmdio:ManuscriptCollection ;
+                   dcterms:title ?collectionTitle .
+}
+
+### 3. Retrieve bibliographic references that cite books, including the titles and authors of the cited books.
+
+SELECT  ?references ?bookTitle  ?authorName
+WHERE { 
+  ?bibliographicReference a biro:BibliographicReference ;
+                            cito:cites ?book;
+                          c4o:hasContent ?references .
+    ?book a fabio:Book ;
+        dcterms:title ?bookTitle ;
+        dcterms:creator ?person .
+  ?person a foaf:Person ;
+          foaf:name ?authorName .
+
+}
+
+
+### 4. Retrieve all manuscripts from the `El Escorial, S.I.9' collection along with the bibliographic references and the book that cite this collection.
+
+
+SELECT  ?manuscript ?manuscriptTitle ?references ?bookTitle 
+WHERE {
+  ?book a fabio:Book ;
+        dcterms:title ?bookTitle ;
+        cito:cites ?collection .  
+?collection a mmdio:ManuscriptCollection ;
+     dcterms:title "El Escorial, S.I.9" ;
+              frbr:part ?manuscript .
+  ?manuscript a memo:Manuscript ;
+               dcterms:title ?manuscriptTitle .
+  ?bibliograhicList a biro:BibliographicList ;
+        cito:cites ?collection .
+  ?bibliograhicList biro:references ?bibliographicReference .
+  ?bibliographicReference a biro:BibliographicReference ;
+                          c4o:hasContent ?references .
+
+}
+
+
+### 5. Retrieve all the folios that contain a gloss including gloss title, identifier, type and placement in the text.
+
+
+SELECT ?folio ?glossTitle ?glossIdentifier ?glossType ?glossPlacement
+WHERE {
+  
+  ?gloss a memo:Gloss ;
+         dcterms:title ?glossTitle;
+         dcterms:identifier ?glossIdentifier;
+         mmdio:hasGlossType ?glossType;
+         mmdio:hasGlossPlacement ?glossPlacement;
+         frbr:embodiment ?folio .
+  ?folio a memo:Folio .
+  
+  FILTER(?glossType IN (mmdio:ordinary, mmdio:extravagant))
+ FILTER(?glossPlacement IN (mmdio:interlinear, mmdio:marginal))
+}
+
+
+
+### 6. Retrieve the biographies of all authors from their respective sections in books.
+
+
+SELECT ?book ?sectionTitle ?biographyContent ?authorName
+WHERE {
+    ?book a fabio:Book ;
+          mmdio:hasSection ?section .
+    ?section a doco:Section ;
+             dcterms:title ?sectionTitle ;
+             mmdio:hasBiography ?biography .
+    ?biography a deo:Biography ;
+               core:description ?biographyContent ;
+               mmdio:isAbout ?author .
+    ?author a foaf:Person ;
+            foaf:name ?authorName .
+}
+
+
+### 7. Retrieve the titles and time intervals (start and end dates) of `Paris, Mazar. 45’ manuscript collection.
+
+SELECT ?startDate ?endDate 
+
+{
+  ?manuscriptCollection a mmdio:ManuscriptCollection ;
+                         dcterms:title "Paris, Mazar. 452" ;
+                        tvc:atTime ?timeInterval .
+  ?timeInterval a ti:TimeInterval ;
+                ti:hasIntervalStartDate ?startDate ;
+                ti:hasIntervalEndDate ?endDate .
+}
+
+
+
+#### 8. Retrieve the critical edition and critical edition volume that cite the `Moralia sive Expositio in Iob' manuscript.
+
+SELECT ?CriticalEdition ?editionTitle ?CriticalEditionVolume ?volumeIdentifier
+WHERE {
+  ?CriticalEditionVolume a memo:CriticalEditionVolume ;
+                         dcterms:identifier ?volumeIdentifier ;
+                         cito:cites ?manuscript .
+  ?manuscript a memo:Manuscript ;
+              dcterms:title "De inventione librorum Moralium S. Gregorii" .
+  ?CriticalEdition a fabio:CriticalEdition ;
+                   dcterms:title ?editionTitle ;
+                   frbr:realization ?CriticalEditionVolume.
+}
+
+
+#### 9. What are the textual roles and content of the textual metadata associated with the manuscript titled "Tres libri cum glossa Accursii"
+
+SELECT ?TextualRole ?hasTextualContent 
+WHERE {
+  ?Manuscript a memo:Manuscript ;
+              dcterms:title "Tres libri cum glossa Accursii" ;
+              memo:hasTextualMetadata ?TextualMetadata .
+  ?TextualMetadata a mmdio:TextualMetadata ;
+                   memo:withTextualRole ?TextualRole ;
+                   mmdio:hasTextualContent ?hasTextualContent .
+  
+}
+
+
+#### 10. Retrieve all manuscripts that include incipit, explicit, follows, and `notes' annotations
+
+SELECT ?Manuscript ?title ?TextualMetadata ?hasTextualContent ?TextualRole
+WHERE {
+  ?Manuscript a memo:Manuscript ;
+              dcterms:title ?title ;
+              memo:hasTextualMetadata ?TextualMetadata .
+  ?TextualMetadata a mmdio:TextualMetadata ;
+                   memo:withTextualRole ?TextualRole ;
+                   mmdio:hasTextualContent ?hasTextualContent .
+  FILTER(?TextualRole IN (memo:incipit, memo:explicit, mmdio:follows, mmdio:notes))
+}
+
+
+#### 11. List all folios within the codex `Codex-006', including the identifiers for each recto and verso side.
+
+SELECT ?Folio ?RectoIdentifier ?VersoIdentifier
+WHERE {
+  ?codex a memo:Codex ;
+         dcterms:identifier "http://irnerio.cirsfid.unibo.it/codex/006/" ;
+         frbr:part ?Folio .
+  ?Folio a memo:Folio .
+    OPTIONAL {
+    ?Folio frbr:part ?recto .
+    ?recto a memo:Recto ;
+           dcterms:identifier ?RectoIdentifier .
+  }
+  
+  OPTIONAL {
+    ?Folio frbr:part ?verso .
+    ?verso a memo:Verso ;
+           dcterms:identifier ?VersoIdentifier .
+  }
+
+}
+
+### 11.  Retrieve the dimensions of the binding (length and width) and the size measurement unit for the codex 'http://irnerio.cirsfid.unibo.it/codex/006/'.
+
+SELECT ?binding ?length ?width ?unit 
+WHERE {
+
+  ?codex a memo:Codex ;
+         dcterms:identifier "http://irnerio.cirsfid.unibo.it/codex/006/" ;
+         frbr:part ?binding .
+  ?binding a memo:Binding ;
+           dcterms:extent ?sizeMeasurement .
+  ?sizeMeasurement a memo:SizeMeasurement ;
+                   memo:hasLength ?length ;
+                   memo:hasWidth ?width ;
+                   memo:hasSizeMeasurementUnit ?unit .
+  FILTER(?unit IN (memo:millimeters, memo:centimeters, memo:decimeters, memo:meters))
+}
+
+### 12. Retrieve the decoration details, such as initials and rubrication, for each codex.
+
+SELECT ?codexIdentifier ?initial 
+
+WHERE {
+    ?codex a memo:Codex ;
+           dcterms:identifier ?codexIdentifier;
+         mmdio:hasDecoration ?decoration.
+    
+    ?decoration a mmdio:Decoration;
+            mmdio:hasInitial ?initial.    
+               
+}
+
+### 13. Retrieve the decoration detail such as initial of codex “Firenze, sin7 plu.6
+
+SELECT ?initial 
+
+WHERE {
+    ?codex a memo:Codex ;
+           dcterms:identifier "http://mosaico.cirsfid.unibo.it/book/view/27";
+         mmdio:hasDecoration ?decoration.
+    
+    ?decoration a mmdio:Decoration;
+            mmdio:hasInitial ?initial .
+            
+               
+}
+
+### 14. Retrieve the current physical location of `Customs feudorum cum glossa Accursii’ manuscript
+
+SELECT ?currentLocation 
+WHERE {
+  ?manuscript a memo:Manuscript ;
+             dcterms:title "Customs feudorum cum glossa Accursii" ;
+             core:hasLocation ?location .
+    ?location a dcterms:Location ;
+           arco:hasLocationType arco:CurrentPhysicalLocation ;
+             mmdio:hasLocationName ?currentLocation .
+}
+
+### 15. Which books in the 'mosaico' digital collection cite manuscripts from the 'irnerio' collection?
+
+  SELECT  ?book  ?bookTitle  ?manuscript ?manuscriptTitle
+WHERE {
+  ?book a fabio:Book ;
+        frbr:partOf  ?bookCollection;
+        dcterms:title ?bookTitle;
+        cito:cites ?manuscript .
+   ?bookCollection a mmdio:DigitalResourceCollection;
+           dcterms:title "mosaico" .
+    ?manuscript a memo:Manuscript ;
+              dcterms:title ?manuscriptTitle ;
+             frbr:partOf   ?manuscriptCollection.
+   ?manuscriptCollection a mmdio:DigitalResourceCollection;
+           dcterms:title "irnerio" .
+}
+
+
