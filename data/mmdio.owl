@@ -1,0 +1,2848 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://w3id.org/irnerio-mosaico/ontology/mmdio/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://w3id.org/irnerio-mosaico/ontology/mmdio/"
+     versionIRI="https://w3id.org/irnerio-mosaico/ontology/mmdio/1.0.0">
+    <Prefix name="" IRI="http://www.mmdio.org/ontology/mmdio/"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ti" IRI="http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#"/>
+    <Prefix name="c4o" IRI="http://purl.org/spar/c4o/"/>
+    <Prefix name="deo" IRI="http://purl.org/spar/deo/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="tvc" IRI="http://purl.org/spar/tvc/"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="arco" IRI="https://w3id.org/arco/ontology/location/"/>
+    <Prefix name="biro" IRI="http://purl.org/spar/biro/"/>
+    <Prefix name="cito" IRI="http://purl.org/spar/cito/"/>
+    <Prefix name="core" IRI="https://w3id.org/arco/ontology/core/"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="frbr" IRI="http://purl.org/vocab/frbr/core#"/>
+    <Prefix name="memo" IRI="https://w3id.org/irnerio/ontology/memo/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="fabio" IRI="http://purl.org/spar/fabio/2019-02-19/"/>
+    <Prefix name="mmdio" IRI="http://www.mmdio.org/ontology/mmdio/"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="literal" IRI="http://purl.org/spar/literal/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>### MMDIO, an OWL 2 DL ontology, provides a detailed structure to represent medieval manuscript information from diverse sources.It is built on the Memo ontology and uses the FRBR-aligned Bibliographic Ontology(FaBiO) approach to distinguish between intellectual content (Expressions) and physical forms (Manifestations). MMDIO advances this method to create a more flexible, adaptable, and interoperable system for manuscript data. By incorporating features that capture both the intellectual and physical characteristics of manuscripts, MMDIO supports a wide range of scholarly activities, from in-depth manuscript analysis to comprehensive historical research.
+
+###The objectives of MMDIO are diverse and aim to:
+
+1. Facilitate seamless integration and interaction between the Mosaico and Irnerio platforms, ensuring unified access to medieval manuscript data across diverse repositories, including textual content, physical characteristics, historical aspects, and artistic features, across diverse repositories.
+
+2.  Simplify the citation complexities associated with medieval manuscripts by providing a unified data model that enables intuitive access and scholarly analysis.
+3. Enhance digital archiving practices to improve the organization, retrieval, and preservation of manuscript data, facilitating efficient management and accessibility in digital libraries.
+
+ 3 .Support scholarly research by enabling complex queries that connect textual content with historical contexts, allowing scholars to trace the provenance, influence, and evolution of medieval texts.
+
+ 4.  Enhance interoperability and usability of manuscript data in the digital humanities by standardizing data representation and ensuring seamless integration across repositories.
+
+5.  Foster interdisciplinary collaboration by promoting holistic understanding through facilitating connections among disciplines such as history, literature, and art.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>mmdio</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="dcterms:Location"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcterms:PhysicalMedium"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcterms:SizeOrDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="biro:BibliographicList"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="biro:BibliographicReference"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="deo:Biography"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="deo:SupplementaryInformationDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/spar/doco/Section"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/spar/fabio/Comment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/spar/fabio/CriticalEdition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/spar/fabio/Manifestation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/spar/fabio/Work"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="ti:TimeInterval"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="arco:LocationType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Decoration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DigitalResourceCollection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GlossPlacement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="GlossType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ManuscriptCollection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TextualMetadata"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Binding"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Codex"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:CriticalEditionVolume"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Folio"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Gloss"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Manuscript"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Recto"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Side"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:SizeMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:SizeMeasurementUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Text"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:TextualRole"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="memo:Verso"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcterms:creator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcterms:extent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcterms:medium"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="biro:isReferencedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="biro:references"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="cito:cites"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="cito:isCitedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="frbr:embodiment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="frbr:embodimentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="frbr:part"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="frbr:partOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="frbr:realization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="frbr:realizationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="core:hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="core:isLocationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="arco:hasLocationType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="arco:isLocationTypeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasBiography"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasDecoration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasGlossPlacement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasGlossType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasSection"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isAbout"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="refersToMenifestation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="memo:hasSizeMeasurementUnit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="memo:hasTextualMetadata"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="memo:isTextualMetadataOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="memo:isTextualRoleIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="memo:withTextualRole"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dcterms:identifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="dcterms:title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="c4o:hasContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="ti:hasIntervalEndDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="ti:hasIntervalStartDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="foaf:name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="foaf:nick"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="core:description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasFoliation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasInitial"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasLanguage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasLocationName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasRubrication"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasStyleScript"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasTextualContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="hasWritingHands"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="memo:hasLength"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="memo:hasNumberOfColumns"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="memo:hasWidth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="arco:CurrentPhysicalLocation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="arco:PreviousLocation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="extravagant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="follows"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="interlinear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="marginal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="notes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="ordinary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="memo:centimeters"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="memo:decimeters"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="memo:explicit"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="memo:incipit"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="memo:millimeters"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="memo:paper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="memo:parchment"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcterms:Location"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="arco:hasLocationType"/>
+            <Class abbreviatedIRI="arco:LocationType"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcterms:Location"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="hasLocationName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="biro:BibliographicList"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="biro:BibliographicList"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="biro:references"/>
+            <Class abbreviatedIRI="biro:BibliographicReference"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="biro:BibliographicList"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <Class IRI="ManuscriptCollection"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="biro:BibliographicReference"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="biro:BibliographicReference"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <Class IRI="http://purl.org/spar/fabio/Book"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="biro:BibliographicReference"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="c4o:hasContent"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="deo:Biography"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="isAbout"/>
+            <Class abbreviatedIRI="foaf:Person"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="deo:Biography"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="core:description"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="deo:SupplementaryInformationDescription"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="core:description"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/doco/Section"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/doco/Section"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <Class abbreviatedIRI="biro:BibliographicList"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/doco/Section"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasBiography"/>
+            <Class abbreviatedIRI="deo:Biography"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/doco/Section"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:title"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/doco/Section"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="core:description"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <Class IRI="ManuscriptCollection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <Class abbreviatedIRI="memo:Manuscript"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasSection"/>
+            <Class IRI="http://purl.org/spar/doco/Section"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="dcterms:creator"/>
+            <Class abbreviatedIRI="foaf:Person"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="frbr:partOf"/>
+            <Class IRI="DigitalResourceCollection"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+            <Class abbreviatedIRI="ti:TimeInterval"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:title"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Comment"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Comment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <Class IRI="http://purl.org/spar/fabio/Book"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Comment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <Class abbreviatedIRI="memo:Text"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Comment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <ObjectUnionOf>
+                <Class IRI="http://purl.org/spar/fabio/Book"/>
+                <Class abbreviatedIRI="memo:Text"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/CriticalEdition"/>
+        <Class IRI="http://purl.org/spar/fabio/Work"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/CriticalEdition"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:realization"/>
+            <Class abbreviatedIRI="memo:CriticalEditionVolume"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/CriticalEdition"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:title"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:embodiment"/>
+            <Class IRI="http://purl.org/spar/fabio/Manifestation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:realizationOf"/>
+            <Class IRI="http://purl.org/spar/fabio/Work"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Manifestation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:embodimentOf"/>
+            <Class IRI="http://purl.org/spar/fabio/Expression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/spar/fabio/Work"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:realization"/>
+            <Class IRI="http://purl.org/spar/fabio/Expression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ti:TimeInterval"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="ti:hasIntervalEndDate"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ti:TimeInterval"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="ti:hasIntervalStartDate"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="foaf:Organization"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="foaf:name"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="foaf:name"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="foaf:Person"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="foaf:nick"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="arco:LocationType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="arco:isLocationTypeOf"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Decoration"/>
+        <Class IRI="http://purl.org/spar/fabio/Manifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Decoration"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="hasInitial"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Decoration"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="hasRubrication"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DigitalResourceCollection"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DigitalResourceCollection"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="dcterms:creator"/>
+            <Class abbreviatedIRI="foaf:Organization"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DigitalResourceCollection"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+            <Class abbreviatedIRI="ti:TimeInterval"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DigitalResourceCollection"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:title"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GlossPlacement"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="GlossType"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ManuscriptCollection"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ManuscriptCollection"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:embodiment"/>
+            <Class abbreviatedIRI="memo:Codex"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ManuscriptCollection"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:partOf"/>
+            <Class IRI="DigitalResourceCollection"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ManuscriptCollection"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <Class abbreviatedIRI="memo:Manuscript"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ManuscriptCollection"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="hasDescription"/>
+            <Class abbreviatedIRI="deo:SupplementaryInformationDescription"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ManuscriptCollection"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.essepuntato.it/2012/04/tvc/atTime"/>
+            <Class abbreviatedIRI="ti:TimeInterval"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ManuscriptCollection"/>
+        <ObjectMaxCardinality cardinality="2">
+            <ObjectProperty abbreviatedIRI="core:hasLocation"/>
+            <Class abbreviatedIRI="dcterms:Location"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ManuscriptCollection"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:title"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TextualMetadata"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="memo:withTextualRole"/>
+            <Class abbreviatedIRI="memo:TextualRole"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TextualMetadata"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="hasTextualContent"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Binding"/>
+        <Class IRI="http://purl.org/spar/fabio/Manifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Binding"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="dcterms:extent"/>
+            <Class abbreviatedIRI="memo:SizeMeasurement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Binding"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="dcterms:medium"/>
+            <Class abbreviatedIRI="dcterms:PhysicalMedium"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <Class IRI="http://purl.org/spar/fabio/Manifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasDecoration"/>
+            <Class IRI="Decoration"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <Class abbreviatedIRI="memo:Binding"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <Class abbreviatedIRI="memo:Folio"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="memo:Binding"/>
+                <Class abbreviatedIRI="memo:Folio"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="hasStyleScript"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="hasWritingHands"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:identifier"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Codex"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="hasFoliation"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:CriticalEditionVolume"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:CriticalEditionVolume"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="cito:cites"/>
+            <Class abbreviatedIRI="memo:Manuscript"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:CriticalEditionVolume"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:identifier"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Folio"/>
+        <Class IRI="http://purl.org/spar/fabio/Manifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Folio"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="dcterms:extent"/>
+            <Class abbreviatedIRI="memo:SizeMeasurement"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Folio"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="dcterms:medium"/>
+            <Class abbreviatedIRI="dcterms:PhysicalMedium"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Folio"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <Class abbreviatedIRI="memo:Recto"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Folio"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <Class abbreviatedIRI="memo:Side"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Folio"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <Class abbreviatedIRI="memo:Verso"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Gloss"/>
+        <Class IRI="http://purl.org/spar/fabio/Comment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Gloss"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:embodiment"/>
+            <Class abbreviatedIRI="memo:Folio"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Gloss"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasGlossPlacement"/>
+            <Class IRI="GlossPlacement"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Gloss"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="hasGlossType"/>
+            <Class IRI="GlossType"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Gloss"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="hasDescription"/>
+            <Class abbreviatedIRI="deo:SupplementaryInformationDescription"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Gloss"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:identifier"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Gloss"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:title"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Manuscript"/>
+        <Class IRI="http://purl.org/spar/fabio/Book"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Manuscript"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <Class abbreviatedIRI="memo:Text"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Manuscript"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:part"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI="memo:Gloss"/>
+                <Class abbreviatedIRI="memo:Text"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Manuscript"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="memo:hasTextualMetadata"/>
+            <Class IRI="TextualMetadata"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Manuscript"/>
+        <ObjectMaxCardinality cardinality="2">
+            <ObjectProperty abbreviatedIRI="core:hasLocation"/>
+            <Class abbreviatedIRI="dcterms:Location"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Manuscript"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="hasLanguage"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Recto"/>
+        <Class abbreviatedIRI="memo:Side"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Recto"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:identifier"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Side"/>
+        <Class IRI="http://purl.org/spar/fabio/Manifestation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Side"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="memo:hasNumberOfColumns"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:SizeMeasurement"/>
+        <Class abbreviatedIRI="dcterms:SizeOrDuration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:SizeMeasurement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="memo:hasSizeMeasurementUnit"/>
+            <Class abbreviatedIRI="memo:SizeMeasurementUnit"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:SizeMeasurement"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="memo:hasLength"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:SizeMeasurement"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="memo:hasWidth"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Text"/>
+        <Class IRI="http://purl.org/spar/fabio/Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Text"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:embodiment"/>
+            <Class abbreviatedIRI="memo:Folio"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Text"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="frbr:partOf"/>
+            <Class abbreviatedIRI="memo:Manuscript"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Verso"/>
+        <Class abbreviatedIRI="memo:Side"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="memo:Verso"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="dcterms:identifier"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="foaf:Organization"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI="arco:LocationType"/>
+        <NamedIndividual abbreviatedIRI="arco:CurrentPhysicalLocation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="arco:LocationType"/>
+        <NamedIndividual abbreviatedIRI="arco:PreviousLocation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GlossType"/>
+        <NamedIndividual IRI="extravagant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="memo:TextualRole"/>
+        <NamedIndividual IRI="follows"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GlossPlacement"/>
+        <NamedIndividual IRI="interlinear"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GlossPlacement"/>
+        <NamedIndividual IRI="marginal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="memo:TextualRole"/>
+        <NamedIndividual IRI="notes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="GlossType"/>
+        <NamedIndividual IRI="ordinary"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="memo:SizeMeasurementUnit"/>
+        <NamedIndividual abbreviatedIRI="memo:centimeters"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="memo:SizeMeasurementUnit"/>
+        <NamedIndividual abbreviatedIRI="memo:decimeters"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="memo:TextualRole"/>
+        <NamedIndividual abbreviatedIRI="memo:explicit"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="memo:TextualRole"/>
+        <NamedIndividual abbreviatedIRI="memo:incipit"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="memo:SizeMeasurementUnit"/>
+        <NamedIndividual abbreviatedIRI="memo:millimeters"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcterms:PhysicalMedium"/>
+        <NamedIndividual abbreviatedIRI="memo:paper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcterms:PhysicalMedium"/>
+        <NamedIndividual abbreviatedIRI="memo:parchment"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="dcterms:creator"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="biro:isReferencedBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="biro:references"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="biro:isReferencedBy"/>
+        <ObjectProperty abbreviatedIRI="biro:references"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="cito:cites"/>
+        <ObjectProperty abbreviatedIRI="cito:isCitedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="frbr:embodiment"/>
+        <ObjectProperty abbreviatedIRI="frbr:embodimentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="frbr:part"/>
+        <ObjectProperty abbreviatedIRI="frbr:partOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="frbr:realization"/>
+        <ObjectProperty abbreviatedIRI="frbr:realizationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="core:hasLocation"/>
+        <ObjectProperty abbreviatedIRI="core:isLocationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="arco:hasLocationType"/>
+        <ObjectProperty abbreviatedIRI="arco:isLocationTypeOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="memo:hasTextualMetadata"/>
+        <ObjectProperty abbreviatedIRI="memo:isTextualMetadataOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="memo:isTextualRoleIn"/>
+        <ObjectProperty abbreviatedIRI="memo:withTextualRole"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="frbr:realizationOf"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="core:hasLocation"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="arco:hasLocationType"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="arco:isLocationTypeOf"/>
+        <Class abbreviatedIRI="arco:LocationType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="memo:hasSizeMeasurementUnit"/>
+        <Class abbreviatedIRI="memo:SizeMeasurement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dcterms:extent"/>
+        <Class abbreviatedIRI="dcterms:SizeOrDuration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="core:isLocationOf"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="arco:hasLocationType"/>
+        <Class abbreviatedIRI="arco:LocationType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="arco:isLocationTypeOf"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="memo:hasSizeMeasurementUnit"/>
+        <Class abbreviatedIRI="memo:SizeMeasurementUnit"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="memo:withTextualRole"/>
+        <Class abbreviatedIRI="memo:TextualRole"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI="c4o:hasContent"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="ti:hasIntervalEndDate"/>
+        <Class abbreviatedIRI="ti:TimeInterval"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="ti:hasIntervalStartDate"/>
+        <Class abbreviatedIRI="ti:TimeInterval"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="foaf:name"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="core:description"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="memo:hasNumberOfColumns"/>
+        <Class abbreviatedIRI="memo:Side"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="c4o:hasContent"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="foaf:name"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="core:description"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="memo:hasLength"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="memo:hasNumberOfColumns"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="memo:hasWidth"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:Location</AbbreviatedIRI>
+        <Literal>A spatial region or named place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:Location</AbbreviatedIRI>
+        <IRI>http://purl.org/dc/terms</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:Location</AbbreviatedIRI>
+        <Literal xml:lang="en-us">Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:PhysicalMedium</AbbreviatedIRI>
+        <Literal xml:lang="en">A physical material or carrier.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:PhysicalMedium</AbbreviatedIRI>
+        <IRI>http://purl.org/dc/terms</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:PhysicalMedium</AbbreviatedIRI>
+        <Literal xml:lang="en-us">Physical Medium</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:SizeOrDuration</AbbreviatedIRI>
+        <Literal xml:lang="en-us">Examples include a number of pages, a specification of length, width, and breadth, or a period in hours, minutes, and seconds.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:SizeOrDuration</AbbreviatedIRI>
+        <AbbreviatedIRI>dcterms:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:SizeOrDuration</AbbreviatedIRI>
+        <Literal xml:lang="en-us">Size or Duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:creator</AbbreviatedIRI>
+        <Literal xml:lang="en-us">Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:creator</AbbreviatedIRI>
+        <IRI>http://purl.org/dc/terms</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:creator</AbbreviatedIRI>
+        <Literal xml:lang="en">has creator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:extent</AbbreviatedIRI>
+        <Literal xml:lang="en">This property indicates the extent of a resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:extent</AbbreviatedIRI>
+        <IRI>http://purl.org/dc/terms</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:extent</AbbreviatedIRI>
+        <Literal xml:lang="en-us">Extent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:extent</AbbreviatedIRI>
+        <Literal xml:lang="en">has extent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:identifier</AbbreviatedIRI>
+        <Literal xml:lang="en">This property indicates a unique and unambiguous reference to the resource within a given context.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:identifier</AbbreviatedIRI>
+        <IRI>http://purl.org/dc/terms</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:identifier</AbbreviatedIRI>
+        <Literal xml:lang="en">has identifier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:medium</AbbreviatedIRI>
+        <Literal xml:lang="en">This property indicates the material of a resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:medium</AbbreviatedIRI>
+        <IRI>http://purl.org/dc/terms</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:medium</AbbreviatedIRI>
+        <Literal xml:lang="en">has medium</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dcterms:title</AbbreviatedIRI>
+        <Literal xml:lang="en">A name given to a resource.  Typically, the title will be the name by which the resource is formally known.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dcterms:title</AbbreviatedIRI>
+        <IRI>http://purl.org/dc/terms</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcterms:title</AbbreviatedIRI>
+        <Literal xml:lang="en">has title</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>biro:BibliographicList</AbbreviatedIRI>
+        <Literal xml:lang="en">An ordered list of bibliographic items, each of which contains a bibliographic reference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>biro:BibliographicList</AbbreviatedIRI>
+        <IRI>http://purl.org/spar/biro</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>biro:BibliographicList</AbbreviatedIRI>
+        <Literal xml:lang="en">bibliographic list</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>biro:BibliographicReference</AbbreviatedIRI>
+        <Literal xml:lang="en">An expression of a bibliographic record in a specific format, that references a particular textual or data publication (or a work in preparation for publication). Each bibliographic reference is a list of items containing entities that describe aspects of the referenced work - for example authors, title, journal, publication year - selected from the bibliographic record.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>biro:BibliographicReference</AbbreviatedIRI>
+        <IRI>http://purl.org/spar/biro</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>biro:BibliographicReference</AbbreviatedIRI>
+        <Literal xml:lang="en">bibliographic reference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>biro:isReferencedBy</AbbreviatedIRI>
+        <Literal xml:lang="en">The relation between a publication and the bibliographic record or bibliographic reference describing it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>biro:isReferencedBy</AbbreviatedIRI>
+        <IRI>http://purl.org/spar/biro</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>biro:isReferencedBy</AbbreviatedIRI>
+        <Literal xml:lang="en">is referenced by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>biro:references</AbbreviatedIRI>
+        <Literal xml:lang="en">The relation between a bibliographic record or a bibliographic reference and the publication being referenced.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>biro:references</AbbreviatedIRI>
+        <IRI>http://purl.org/spar/biro</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>biro:references</AbbreviatedIRI>
+        <Literal xml:lang="en">references</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>c4o:hasContent</AbbreviatedIRI>
+        <Literal xml:lang="en">It is used to specify the textual content of a particular FRBR expression.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>c4o:hasContent</AbbreviatedIRI>
+        <IRI>http://purl.org/spar/c4o</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>c4o:hasContent</AbbreviatedIRI>
+        <Literal xml:lang="en">has content</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cito:cites</AbbreviatedIRI>
+        <Literal xml:lang="en">Subproperty of dcterms:relation. It refers to an entity citing a cited entity, either directly and explicitly, indirectly, or implicitly.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>cito:cites</AbbreviatedIRI>
+        <IRI>http://purl.org/spar/cito</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cito:cites</AbbreviatedIRI>
+        <Literal xml:lang="en">cites</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cito:isCitedBy</AbbreviatedIRI>
+        <Literal xml:lang="en">The cited entity (the subject of the RDF triple) is cited by the citing entity (the object of the triple).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>cito:isCitedBy</AbbreviatedIRI>
+        <Literal xml:lang="en">This property indicates that the cited entity is cited by the citing entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>cito:isCitedBy</AbbreviatedIRI>
+        <IRI>http://purl.org/spar/cito</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>cito:isCitedBy</AbbreviatedIRI>
+        <Literal xml:lang="en">is cited by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>deo:Biography</AbbreviatedIRI>
+        <Literal xml:lang="en">Information describing a person and his or her life history and contributions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>deo:Biography</AbbreviatedIRI>
+        <AbbreviatedIRI>deo:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>deo:Biography</AbbreviatedIRI>
+        <Literal xml:lang="en">biography</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>deo:SupplementaryInformationDescription</AbbreviatedIRI>
+        <Literal xml:lang="en">Information describing supplementary information relating to the document, including references or links to the relevant supplementary information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>deo:SupplementaryInformationDescription</AbbreviatedIRI>
+        <IRI>http://purl.org/spar/deo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>deo:SupplementaryInformationDescription</AbbreviatedIRI>
+        <Literal xml:lang="en">supplementary information description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/spar/doco/Section</IRI>
+        <Literal xml:lang="en">A logical division of the text, usually numbered and/or titled, which may contain subsections.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/spar/doco/Section</IRI>
+        <IRI>http://purl.org/spar/doco</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/spar/doco/Section</IRI>
+        <Literal xml:lang="en">section</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/spar/fabio/Book</IRI>
+        <Literal xml:lang="en">A non-serial document that is complete in one volume or a designated finite number of volumes.  A book published by a publisher is usually  identified by an International Standard Book Number (ISBN), and may be manifested as a physical printed publication on paper bound in a hard or soft cover, or in electronic format as an &apos;e-book&apos;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/spar/fabio/Book</IRI>
+        <IRI>http://purl.org/spar/fabio/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/spar/fabio/Book</IRI>
+        <Literal xml:lang="en">book</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/spar/fabio/Comment</IRI>
+        <Literal xml:lang="en">A verbal or written remark concerning some entity.  In written form, a comment is often appended to that entity and termed an annotation.  Within computer programs or ontologies, comments are added to enhance human understanding, and are usually prefaced by a special syntactic symbol that ensures they are ignored during execution of the program.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/spar/fabio/Comment</IRI>
+        <IRI>http://purl.org/spar/fabio/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/spar/fabio/Comment</IRI>
+        <Literal xml:lang="en">comment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/spar/fabio/CriticalEdition</IRI>
+        <Literal xml:lang="en">A new edition of a historical publication, edited by a scholar other than the original author, containing within the body text the supposedly best version of the original work, with footnotes detailing and commenting on textual variations between different versions, typically with an introduction to the original work written by the scholar, and with a bibliography listing related publications.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/spar/fabio/CriticalEdition</IRI>
+        <IRI>http://purl.org/spar/fabio</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/spar/fabio/CriticalEdition</IRI>
+        <Literal xml:lang="en">critical edition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/spar/fabio/Expression</IRI>
+        <Literal xml:lang="en">A subclass of FRBR expression, restricted to expressions of fabio:Works.  For your latest research paper, the preprint submitted to the publisher, and the final published version to which the publisher assigned a unique digital object identifier, are both expressions of the same work.  </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/spar/fabio/Expression</IRI>
+        <IRI>http://purl.org/spar/fabio</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/spar/fabio/Expression</IRI>
+        <Literal xml:lang="en">expression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/spar/fabio/Manifestation</IRI>
+        <Literal xml:lang="en">A subclass of FRBR manifestation, restricted to manifestations of fabio:Expressions. fabio:Manifestation specifically applies to electronic (digital) as well as to physical manifestations of expressions.  
+
+Examples of different manifestations of a single &apos;version of record&apos; expression of a scholarly work include an article in a print journal or the on-line version of that article as a web page.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/spar/fabio/Manifestation</IRI>
+        <IRI>http://purl.org/spar/fabio</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/spar/fabio/Manifestation</IRI>
+        <Literal xml:lang="en">manifestation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/spar/fabio/Work</IRI>
+        <Literal xml:lang="en">A subclass of FRBR work, restricted to works that are published or potentially publishable, and that contain or are referred to by bibliographic references, or entities used to define bibliographic references. FaBiO works, and their expressions and manifestations, are primarily textual publications such as books, magazines, newspapers and journals, and items of their content.  However, they also include datasets, computer algorithms, experimental protocols, formal specifications and vocabularies, legal records, governmental papers, technical and commercial reports and similar publications, and also bibliographies, reference lists, library catalogues and similar collections. For this reason, fabio:Work is not an equivalent class to frbr:ScholarlyWork.  An example of a fabio:Work is your latest research paper.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/spar/fabio/Work</IRI>
+        <Literal xml:lang="en">work</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>frbr:embodiment</AbbreviatedIRI>
+        <Literal xml:lang="en">As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#embodiment), a property representing a manifestation that embodies an expression.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>frbr:embodiment</AbbreviatedIRI>
+        <AbbreviatedIRI>frbr:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>frbr:embodiment</AbbreviatedIRI>
+        <Literal xml:lang="en">has embodiment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>frbr:embodimentOf</AbbreviatedIRI>
+        <Literal xml:lang="en">A manifestation that embodies an expression.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>frbr:embodimentOf</AbbreviatedIRI>
+        <Literal xml:lang="en">As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#embodimentOf), a property representing an expression that is embodied by a manifestation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>frbr:embodimentOf</AbbreviatedIRI>
+        <Literal xml:lang="en">This property indicates that a particular manifestation embodies an expression of a work.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>frbr:embodimentOf</AbbreviatedIRI>
+        <IRI>http://purl.org/vocab/frbr/core</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>frbr:embodimentOf</AbbreviatedIRI>
+        <Literal xml:lang="en">is embodiment of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>frbr:part</AbbreviatedIRI>
+        <Literal xml:lang="en">Meaning = has part.  As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#part),  a property indicating that one entity includes another entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>frbr:part</AbbreviatedIRI>
+        <AbbreviatedIRI>frbr:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>frbr:part</AbbreviatedIRI>
+        <Literal xml:lang="en">has part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>frbr:partOf</AbbreviatedIRI>
+        <Literal xml:lang="en">Meaning = is part of.  As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#partOf), a property indicating that one entity is a part of another entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>frbr:partOf</AbbreviatedIRI>
+        <AbbreviatedIRI>frbr:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>frbr:partOf</AbbreviatedIRI>
+        <Literal xml:lang="en">is part of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>frbr:realization</AbbreviatedIRI>
+        <Literal xml:lang="en">As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#realization), a property representing an expression that is an intellectual or artistic realization of a work.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>frbr:realization</AbbreviatedIRI>
+        <AbbreviatedIRI>frbr:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>frbr:realization</AbbreviatedIRI>
+        <Literal xml:lang="en">has realization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>frbr:realizationOf</AbbreviatedIRI>
+        <Literal xml:lang="en">As defined by FRBR (http://www.ifla.org/VII/s13/frbr/frbr1.htm; http://purl.org/vocab/frbr/core#realizationOf), a property representing the work that has been realized by an expression.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>frbr:realizationOf</AbbreviatedIRI>
+        <IRI>http://purl.org/vocab/frbr/core</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>frbr:realizationOf</AbbreviatedIRI>
+        <Literal xml:lang="en">is realization of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.essepuntato.it/2012/04/tvc/atTime</IRI>
+        <Literal xml:lang="en">It specifies the particular temporal instant or time period in which the situation takes place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.essepuntato.it/2012/04/tvc/atTime</IRI>
+        <IRI>http://www.essepuntato.it/2012/04/tvc/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.essepuntato.it/2012/04/tvc/atTime</IRI>
+        <Literal>at time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ti:TimeInterval</AbbreviatedIRI>
+        <Literal>Any Region in a dimensional space that aims at representing time.
+It should be used when you want to talk about time as an object having some characteristics.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>ti:TimeInterval</AbbreviatedIRI>
+        <IRI>http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ti:TimeInterval</AbbreviatedIRI>
+        <Literal xml:lang="en">Time interval</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ti:hasIntervalEndDate</AbbreviatedIRI>
+        <Literal>The end date of a time interval.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>ti:hasIntervalEndDate</AbbreviatedIRI>
+        <IRI>http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ti:hasIntervalEndDate</AbbreviatedIRI>
+        <Literal xml:lang="en">interval has end date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>ti:hasIntervalStartDate</AbbreviatedIRI>
+        <Literal>The start date of a time interval.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>ti:hasIntervalStartDate</AbbreviatedIRI>
+        <IRI>http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ti:hasIntervalStartDate</AbbreviatedIRI>
+        <Literal xml:lang="en">interval has start date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>foaf:Agent</AbbreviatedIRI>
+        <Literal>An agent (eg. person, group, software or physical artifact).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>foaf:Agent</AbbreviatedIRI>
+        <AbbreviatedIRI>foaf:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>foaf:Agent</AbbreviatedIRI>
+        <Literal>Agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>foaf:Organization</AbbreviatedIRI>
+        <Literal>An organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>foaf:Organization</AbbreviatedIRI>
+        <AbbreviatedIRI>foaf:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>foaf:Organization</AbbreviatedIRI>
+        <Literal>Organization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>foaf:Person</AbbreviatedIRI>
+        <Literal>A person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>foaf:Person</AbbreviatedIRI>
+        <AbbreviatedIRI>foaf:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>foaf:Person</AbbreviatedIRI>
+        <Literal>Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>foaf:name</AbbreviatedIRI>
+        <Literal>A name for some thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>foaf:name</AbbreviatedIRI>
+        <AbbreviatedIRI>foaf:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>foaf:name</AbbreviatedIRI>
+        <Literal>name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>foaf:nick</AbbreviatedIRI>
+        <Literal>A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>foaf:nick</AbbreviatedIRI>
+        <AbbreviatedIRI>foaf:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>foaf:nick</AbbreviatedIRI>
+        <Literal>nickname</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>core:description</AbbreviatedIRI>
+        <Literal xml:lang="en">This property relates a description associated to an entity, in order to add details and some more information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>core:description</AbbreviatedIRI>
+        <IRI>https://w3id.org/arco/ontology/core</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>core:description</AbbreviatedIRI>
+        <Literal xml:lang="en">description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>core:hasLocation</AbbreviatedIRI>
+        <Literal xml:lang="en">The object property that associates an entity to a location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>core:hasLocation</AbbreviatedIRI>
+        <IRI>https://w3id.org/arco/ontology/core</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>core:hasLocation</AbbreviatedIRI>
+        <Literal xml:lang="en">has location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>core:isLocationOf</AbbreviatedIRI>
+        <Literal xml:lang="it">La object property che collega un luogo a un&apos;entità che si trova in quel luogo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>core:isLocationOf</AbbreviatedIRI>
+        <Literal xml:lang="en">The object property that associates a location to an entity located there.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>core:isLocationOf</AbbreviatedIRI>
+        <IRI>https://w3id.org/arco/ontology/core</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>core:isLocationOf</AbbreviatedIRI>
+        <Literal xml:lang="en">is location of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>core:isLocationOf</AbbreviatedIRI>
+        <Literal xml:lang="it">è luogo di</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <AbbreviatedIRI>core:isLocationOf</AbbreviatedIRI>
+        <Literal xml:lang="it">stabile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <AbbreviatedIRI>core:isLocationOf</AbbreviatedIRI>
+        <Literal xml:lang="en">stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>arco:CurrentPhysicalLocation</AbbreviatedIRI>
+        <Literal xml:lang="en">This individual represents a specific type of localization, that is the current physical location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>arco:CurrentPhysicalLocation</AbbreviatedIRI>
+        <IRI>https://w3id.org/arco/ontology/location</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>arco:CurrentPhysicalLocation</AbbreviatedIRI>
+        <Literal xml:lang="en">Current Physical Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>arco:LocationType</AbbreviatedIRI>
+        <Literal xml:lang="it">Questa classe rappresenta il tipo di localizzazione di un bene culturale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>arco:LocationType</AbbreviatedIRI>
+        <Literal xml:lang="en">This class represents the type of location of a cultural property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>arco:LocationType</AbbreviatedIRI>
+        <IRI>https://w3id.org/arco/ontology/location</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>arco:LocationType</AbbreviatedIRI>
+        <Literal xml:lang="en">Location Type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>arco:LocationType</AbbreviatedIRI>
+        <Literal xml:lang="it">Tipo di localizzazione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <AbbreviatedIRI>arco:LocationType</AbbreviatedIRI>
+        <Literal xml:lang="it">stabile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <AbbreviatedIRI>arco:LocationType</AbbreviatedIRI>
+        <Literal xml:lang="en">stable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>arco:PreviousLocation</AbbreviatedIRI>
+        <Literal xml:lang="en">This individual represents a specific type of location, that is the place of origin or previous location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>arco:PreviousLocation</AbbreviatedIRI>
+        <IRI>https://w3id.org/arco/ontology/location</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>arco:PreviousLocation</AbbreviatedIRI>
+        <Literal xml:lang="en">Place of Origin / Previous Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>arco:hasLocationType</AbbreviatedIRI>
+        <Literal xml:lang="en">This property links an entity (e.g. a situation in which a place plays a certain role in relation to a cultural property in a time frame, or a georeferencing, or a cadastral identity) to the role of the localization referring to it (i.e current physical location, previous location, finding location, etc.).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>arco:hasLocationType</AbbreviatedIRI>
+        <IRI>https://w3id.org/arco/ontology/location</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>arco:hasLocationType</AbbreviatedIRI>
+        <Literal xml:lang="en">has referred location type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>arco:isLocationTypeOf</AbbreviatedIRI>
+        <Literal xml:lang="en">This property links the role of a localization (i.e current physical location, previous location, finding location, etc.) to an entity referring to it (e.g. a situation in which a place plays a certain role in relation to a cultural property in a time frame, or a georeferencing, or a cadastral identity).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>arco:isLocationTypeOf</AbbreviatedIRI>
+        <IRI>https://w3id.org/arco/ontology/location</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>arco:isLocationTypeOf</AbbreviatedIRI>
+        <Literal xml:lang="en">is referred location type of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Decoration</IRI>
+        <Literal>A class representing the various types of artistic embellishments or ornamental designs found in a codex, such as illustrations, miniatures, and ornate borders.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>Decoration</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>Decoration</IRI>
+        <Literal>decoration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>DigitalResourceCollection</IRI>
+        <Literal>It represents the medieval manuscript information integrated from heterogeneous sources.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>DigitalResourceCollection</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DigitalResourceCollection</IRI>
+        <Literal>digital resource collection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GlossPlacement</IRI>
+        <Literal>It represents the placement attribute of glosses in a document.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>GlossPlacement</IRI>
+        <IRI>http://www.mmdio.org/ontology/mmdio</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GlossPlacement</IRI>
+        <Literal>gloss placement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>GlossType</IRI>
+        <Literal>It represents the categorization of glosses based on their characteristics.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>GlossType</IRI>
+        <IRI>http://www.mmdio.org/ontology/mmdio</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>GlossType</IRI>
+        <Literal>gloss type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ManuscriptCollection</IRI>
+        <Literal>A Manuscript Collection is a compilation of handwritten documents, especially focusing on medieval manuscripts. These collections encompass a range of historically or culturally significant items, such as ancient scrolls, medieval codices, and other hand-crafted documents, reflecting the rich heritage and knowledge of the periods they originate from</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ManuscriptCollection</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ManuscriptCollection</IRI>
+        <Literal>manuscript collection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TextualMetadata</IRI>
+        <Literal>It refers to data that provides contextual or supplementary information about a text.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>TextualMetadata</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TextualMetadata</IRI>
+        <Literal>textual metadata</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>extravagant</IRI>
+        <Literal>An individual that exemplifies glosses which are unusual or beyond the standard scope.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>extravagant</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>extravagant</IRI>
+        <Literal>extravagant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>follows</IRI>
+        <Literal>A relational property used to indicate that one section or element in a manuscript directly comes after another in the sequence.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>follows</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>follows</IRI>
+        <Literal>follows</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasBiography</IRI>
+        <Literal>This relationship signifies that the document section provides or includes biographical information about an individual.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasBiography</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasBiography</IRI>
+        <Literal>has biography</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasDecoration</IRI>
+        <Literal>An object property that connects a codex to its decorative elements, encompassing illustrations, borders, and other artistic features.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasDecoration</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasDecoration</IRI>
+        <Literal>has decoration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasDescription</IRI>
+        <Literal>A textual representation that outlines the essential attributes, characteristics, and context of an entity or object.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasDescription</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasDescription</IRI>
+        <Literal>has description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasFoliation</IRI>
+        <Literal>A property that reference the arrangement and total count of folios in an item, detaliling their sequential order,</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasFoliation</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasFoliation</IRI>
+        <Literal>has foliation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasGlossPlacement</IRI>
+        <Literal>It indicates the placement of a gloss within a document.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasGlossPlacement</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasGlossPlacement</IRI>
+        <Literal>has gloss placement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasGlossType</IRI>
+        <Literal>It indicates the type or category of a gloss.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasGlossType</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasGlossType</IRI>
+        <Literal>has gloss type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasInitial</IRI>
+        <Literal>An object property that relates a codex to its initial letters, specifically those that are enlarged or elaborately decorated at the beginning of sections or paragraphs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasInitial</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasInitial</IRI>
+        <Literal>has initial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasLanguage</IRI>
+        <Literal>A property identifies and stores the language information of a manuscript or text, using standardized codes to facilitate cataloging, search, and organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasLanguage</IRI>
+        <IRI>http://www.mmdio.org/ontology/mmdio</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasLanguage</IRI>
+        <Literal>has language</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasLocationName</IRI>
+        <Literal>It stores the name of a specific place linked to a resource like a document, event, or object.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasLocationName</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasLocationName</IRI>
+        <Literal>has location name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasRubrication</IRI>
+        <Literal>An object property that links a codex to the presence and details of rubrication, referring to the use of red ink for emphasis or decoration, such as in headings, initial letters, or other special text.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasRubrication</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasRubrication</IRI>
+        <Literal>has rubrication</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasSection</IRI>
+        <Literal>A property indicating that an entity (e.g., a book or document) contains or is divided into smaller parts, known as sections. It establishes a hierarchical relationship between the whole and its components.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasSection</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasSection</IRI>
+        <Literal>has section</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasStyleScript</IRI>
+        <Literal>An object property that associates a codex with its particular style of script, indicating the type of calligraphy or font used.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasStyleScript</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasStyleScript</IRI>
+        <Literal>has style script</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasTextualContent</IRI>
+        <Literal>A data property that holds the textual content of features such as incipit, explicit , final rubric, follows and notes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasTextualContent</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasTextualContent</IRI>
+        <Literal>has textual content</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasWritingHands</IRI>
+        <Literal>An object property that links a codex to the specific scribes or styles of handwriting found within it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>hasWritingHands</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hasWritingHands</IRI>
+        <Literal>has writing hands</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>interlinear</IRI>
+        <Literal>An individual that represents glosses placed between the lines of text on a page.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>interlinear</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>interlinear</IRI>
+        <Literal>interlinear</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isAbout</IRI>
+        <Literal>A property that identifies the primary subject of a piece of biographical information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>isAbout</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>isAbout</IRI>
+        <Literal>is about</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>marginal</IRI>
+        <Literal>An individual that represents glosses placed in the margins of a page.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>marginal</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>marginal</IRI>
+        <Literal>marginal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>notes</IRI>
+        <Literal>Supplementary information or annotations that provide additional insight, clarification, or commentary on the main text or its parts. These might include scholarly notes, historical context, or corrections.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>notes</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>notes</IRI>
+        <Literal>notes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>ordinary</IRI>
+        <Literal>An individual that exemplifies standard or typical glosses.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>ordinary</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ordinary</IRI>
+        <Literal>ordinary</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>refersToMenifestation</IRI>
+        <Literal>A relationship that links an expression-level entity (e.g., document section) to a manifestation-level entity (e.g., folio). It captures the association from conceptual content to its physical or digital instantiation, enabling detailed metadata documentation for enhanced resource discoverability and navigability.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>refersToMenifestation</IRI>
+        <IRI></IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>refersToMenifestation</IRI>
+        <Literal>refers to menifestation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Binding</AbbreviatedIRI>
+        <Literal xml:lang="en">The structure that holds a codex together.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Binding</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Binding</AbbreviatedIRI>
+        <Literal xml:lang="en">binding</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Codex</AbbreviatedIRI>
+        <Literal xml:lang="en">A book constructed of one or more folios and at most one binding.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Codex</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Codex</AbbreviatedIRI>
+        <Literal xml:lang="en">codex</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:CriticalEditionVolume</AbbreviatedIRI>
+        <Literal xml:lang="en">The specific realization of a critical edition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:CriticalEditionVolume</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:CriticalEditionVolume</AbbreviatedIRI>
+        <Literal xml:lang="en">critical edition volume</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Folio</AbbreviatedIRI>
+        <Literal xml:lang="en">The page of a codex. It is made up by two sides, called respectively recto and verso.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Folio</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Folio</AbbreviatedIRI>
+        <Literal xml:lang="en">folio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Gloss</AbbreviatedIRI>
+        <Literal xml:lang="en">An annotation that is part of a manuscript. It consists of a brief explanation or a continuous commentary accompanying a manuscript text (as in the margin or between the lines of the text).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Gloss</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Gloss</AbbreviatedIRI>
+        <Literal xml:lang="en">gloss</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Manuscript</AbbreviatedIRI>
+        <Literal xml:lang="en">A handwritten composition constructed of one text and zero or more glosses.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Manuscript</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Manuscript</AbbreviatedIRI>
+        <Literal xml:lang="en">manuscript</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Recto</AbbreviatedIRI>
+        <Literal xml:lang="en">The side of a folio that usually (but not necessarily) is to be read first.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Recto</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Recto</AbbreviatedIRI>
+        <Literal xml:lang="en">recto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Side</AbbreviatedIRI>
+        <Literal xml:lang="en">A single side of a folio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Side</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Side</AbbreviatedIRI>
+        <Literal xml:lang="en">side</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:SizeMeasurement</AbbreviatedIRI>
+        <Literal xml:lang="en">The amount of space or surface that something occupies or the distance over which it extends.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:SizeMeasurement</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:SizeMeasurement</AbbreviatedIRI>
+        <Literal xml:lang="en">size measurement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:SizeMeasurementUnit</AbbreviatedIRI>
+        <Literal xml:lang="en">The definite magnitude of a quantity, defined and adopted by convention or by law, that is used as a standard for measurement of size.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:SizeMeasurementUnit</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:SizeMeasurementUnit</AbbreviatedIRI>
+        <Literal xml:lang="en">size measurement unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Text</AbbreviatedIRI>
+        <Literal xml:lang="en">The primary text that is part of a manuscript.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Text</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Text</AbbreviatedIRI>
+        <Literal xml:lang="en">text</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:TextualRole</AbbreviatedIRI>
+        <Literal xml:lang="en">A function assumed by some textual metadata in time. A textual metadata in time can assume the role of either incipit, explicit or final rubric.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:TextualRole</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:TextualRole</AbbreviatedIRI>
+        <Literal xml:lang="en">textual role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:Verso</AbbreviatedIRI>
+        <Literal xml:lang="en">The side of a folio that usually (but not necessarily) is to be read second.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:Verso</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:Verso</AbbreviatedIRI>
+        <Literal xml:lang="en">verso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:centimeters</AbbreviatedIRI>
+        <Literal xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one hundredth of a meter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:centimeters</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:centimeters</AbbreviatedIRI>
+        <Literal xml:lang="en">centimeters</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:decimeters</AbbreviatedIRI>
+        <Literal xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one tenth of a meter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:decimeters</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:decimeters</AbbreviatedIRI>
+        <Literal xml:lang="en">decimeters</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:explicit</AbbreviatedIRI>
+        <Literal xml:lang="en">A textual role assumed by a textual metadata in time. It is based on the textual string containing the closing words of either the manuscript text, a gloss, or both.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:explicit</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:explicit</AbbreviatedIRI>
+        <Literal xml:lang="en">explicit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:hasLength</AbbreviatedIRI>
+        <Literal xml:lang="en">This property indicates the size of something in terms of length.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:hasLength</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:hasLength</AbbreviatedIRI>
+        <Literal xml:lang="en">has length</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:hasNumberOfColumns</AbbreviatedIRI>
+        <Literal xml:lang="en">This property specifies the number of columns that are present on the side of a folio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:hasNumberOfColumns</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:hasNumberOfColumns</AbbreviatedIRI>
+        <Literal xml:lang="en">has number of columns</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:hasSizeMeasurementUnit</AbbreviatedIRI>
+        <Literal xml:lang="en">This property indicates that an size is being measured with a certain size measurement unit.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:hasSizeMeasurementUnit</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:hasSizeMeasurementUnit</AbbreviatedIRI>
+        <Literal xml:lang="en">has size measurement unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:hasTextualMetadata</AbbreviatedIRI>
+        <Literal xml:lang="en">This property relates some resource to some textual metadata in time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:hasTextualMetadata</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:hasTextualMetadata</AbbreviatedIRI>
+        <Literal xml:lang="en">has textual metadata</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:hasWidth</AbbreviatedIRI>
+        <Literal xml:lang="en">This property indicates the size of something in terms of width.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:hasWidth</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:hasWidth</AbbreviatedIRI>
+        <Literal xml:lang="en">has width</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:incipit</AbbreviatedIRI>
+        <Literal xml:lang="en">A textual role assumed by a textual metadata in time. It is based on the textual string containing the opening words of either the a manuscript text, a gloss, or both.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:incipit</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:incipit</AbbreviatedIRI>
+        <Literal xml:lang="en">incipit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:isTextualMetadataOf</AbbreviatedIRI>
+        <Literal>This property relates some textual metadata to some resource that has been provided with it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:isTextualMetadataOf</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:isTextualMetadataOf</AbbreviatedIRI>
+        <Literal>is textual metadata of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:isTextualRoleIn</AbbreviatedIRI>
+        <Literal xml:lang="en">This property relates a textual role to the textual metadata with that role.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:isTextualRoleIn</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:isTextualRoleIn</AbbreviatedIRI>
+        <Literal xml:lang="en">is textual role in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:millimeters</AbbreviatedIRI>
+        <Literal xml:lang="en">Named individual of size measurement unit. It represents a unit of length or width equal to one thousandth of a meter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:millimeters</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:millimeters</AbbreviatedIRI>
+        <Literal xml:lang="en">millimeters</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:paper</AbbreviatedIRI>
+        <Literal xml:lang="en">Named individual of physical medium. It indicates a thin, flat material made from vegetable fibers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:paper</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:paper</AbbreviatedIRI>
+        <Literal xml:lang="en">paper</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:parchment</AbbreviatedIRI>
+        <Literal xml:lang="en">Named individual of physical medium. It indicates a material made from animal skin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:parchment</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:parchment</AbbreviatedIRI>
+        <Literal xml:lang="en">parchment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>memo:withTextualRole</AbbreviatedIRI>
+        <Literal xml:lang="en">This property relates some textual metadata in time to its textual role.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>memo:withTextualRole</AbbreviatedIRI>
+        <IRI>https://w3id.org/irnerio/ontology/memo</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>memo:withTextualRole</AbbreviatedIRI>
+        <Literal xml:lang="en">with textual role</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
