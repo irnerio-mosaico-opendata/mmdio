@@ -2102,7 +2102,48 @@ WHERE {
     
   </pre>
 
-     <b>Question 13</b>
+ <b>Question 13</b>
+
+
+<p>What are the textual roles and content of the textual metadata associated with the manuscript titled "Tres libri cum glossa Accursii"? </p>
+    
+    <div class="code-block">
+        <pre> 
+
+SELECT ?TextualRole ?hasTextualContent 
+WHERE {
+  ?Manuscript a memo:Manuscript ;
+              dcterms:title "Tres libri cum glossa Accursii" ;
+              memo:hasTextualMetadata ?TextualMetadata .
+  ?TextualMetadata a mmdio:TextualMetadata ;
+                   memo:withTextualRole ?TextualRole ;
+                   mmdio:hasTextualContent ?hasTextualContent .
+  
+}
+    
+  </pre>
+    </div>	
+
+	    <b>Question 14</b>
+
+
+<p>What are the names of the collections and their creators for each digital resource collection? </p>
+    
+    <div class="code-block">
+        <pre> 
+SELECT ?digitalResourceCollection ?title ?creatorName
+WHERE {
+  ?digitalResourceCollection a mmdio:DigitalResourceCollection ;
+                             dcterms:title ?title ;
+                             dcterms:creator ?creator .
+  ?creator a foaf:Organization ;
+           foaf:name ?creatorName .
+}
+    
+  </pre>
+    </div>
+
+     <b>Question 15</b>
 
 
 <p>Which books in the 'mosaico' digital collection cite manuscripts from the 'irnerio' collection? </p>
