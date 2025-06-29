@@ -1775,6 +1775,20 @@ The Irnerio platform features some manuscripts that consist of distinct parts, w
 
 
   <p><b>Expected Outcome: </b>  A cohesive and comprehensive framework that supports broader and more detailed scholarly research across platforms.</p>
+
+<br>
+	  <h3>Use Case 4: Streamlining Montecassino, Olomouc, Arbores, Roffredo Beneventano, and Satana Collections in the Mosaico Digital Library</h3>
+
+<p><b>Challenges:</b> Digital editions of several collections within the Mosaico digital library, specifically Montecassino, Olomouc, Arbores, Roffredo Beneventano, and Satana, present unique structural and bibliographic features that require additional semantic modeling beyond what was covered in Use Case 1.</p>
+
+<p><b>Strategy:</b> Enhance the ontology to accurately capture these distinctive elements and ensure consistent, navigable, and semantically rich representations of each collection.</p>
+
+<b>Solution:</b>
+<p>The Montecassino edition by Martin Bartram includes the signature of the original author Goffredus Tranensi, which is modeled using the new object property <code>mmdio:hasSignature</code> that links a <code>fabio:Book</code> to a <code>foaf:Person</code>. This person is also referenced in bibliographic citations, modeled through the <code>cito:isCitedBy</code> property linking <code>foaf:Person</code> with <code>biro:bibliographicReference</code>. In Montecassino, sections are further divided into subsections, represented using the <code>doco:contains</code> property to link a <code>doco:Section</code> with a <code>mmdio:SubSection</code>. Subsections carry descriptive metadata through the use of <code>dcterms:title</code> and <code>core:description</code>. Furthermore, for the Montecassino, Olomouc, and Roffredo Beneventano collections, the ontology has been extended to connect sections, subsections, and manuscripts directly to folios. This is achieved using the newly introduced object property <code>mmdio:refersToManifestation</code>, which links <code>doco:Section</code>, <code>mmdio:SubSection</code>, and <code>memo:Manuscript</code> entities with <code>memo:Folio</code>. This connection facilitates direct navigation and scholarly reference to specific folios within each collection.</p>
+
+<p><b>Expected Outcome:</b> A more detailed, structured, and user friendly representation of complex manuscript editions within Mosaico, improving scholarly access and ensuring consistency in handling diverse digital collections.</p>
+
+	  
 <h3> Competency Questions and SPARQL Queries</h3>
 
 The prefixes that are used in all the SPARQL queries provided below are defined as follows:
